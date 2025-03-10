@@ -301,7 +301,16 @@
             </p>
             <div class="mt-8 text-center">
               <p class="font-semibold">Dibuat oleh:</p>
-              <p class="text-xl font-bold text-blue-600">Rifki Nur Ikhwan and Partner</p>
+              <p class="text-xl font-bold">
+                <a
+                  href="https://rfkinrikhwan.my.id"
+                  class="text-blue-600"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Rifki Nur Ikhwan</a
+                >
+                and {Slot Kosong}
+              </p>
               <p class="text-sm text-gray-500 mt-2">
                 © {{ new Date().getFullYear() }} Belajar Bareng Kami
               </p>

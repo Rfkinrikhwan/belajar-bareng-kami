@@ -1392,7 +1392,13 @@
 
       <!-- Footer -->
       <footer class="text-center py-6 md:py-8 text-gray-600">
-        <p>Dibuat oleh Rifki Nur Ikhwan and Partner</p>
+        <p>
+          Dibuat oleh
+          <a href="https://rfkinrikhwan.my.id" target="_blank" rel="noopener noreferrer"
+            >Rifki Nur Ikhwan</a
+          >
+          and {Slot Kosong}
+        </p>
         <p class="text-sm mt-2">© {{ new Date().getFullYear() }} Belajar Bareng Kami</p>
       </footer>
     </div>
