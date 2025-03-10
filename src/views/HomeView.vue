@@ -9,9 +9,7 @@
 
       <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Dokumentasi Interaktif
-          </h1>
+          <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Belajar Bareng Kami</h1>
           <p class="text-xl md:text-2xl mb-8 text-blue-100 animate-slide-up">
             Pelajari HTML, Jaringan, dan Konsep Domain dengan cara yang menarik
           </p>
@@ -30,17 +28,6 @@
             </button>
           </div>
         </div>
-      </div>
-
-      <!-- Wave Divider -->
-      <div class="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="w-full h-auto">
-          <path
-            fill="#ffffff"
-            fill-opacity="1"
-            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-          ></path>
-        </svg>
       </div>
     </div>
 
