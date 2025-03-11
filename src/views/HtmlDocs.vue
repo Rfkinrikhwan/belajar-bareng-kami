@@ -1397,7 +1397,7 @@
           <a href="https://rfkinrikhwan.my.id" target="_blank" rel="noopener noreferrer"
             >Rifki Nur Ikhwan</a
           >
-          and {Slot Kosong}
+          and M Faiz Pratama Iwani
         </p>
         <p class="text-sm mt-2">© {{ new Date().getFullYear() }} Belajar Bareng Kami</p>
       </footer>

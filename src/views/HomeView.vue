@@ -309,7 +309,7 @@
                   rel="noopener noreferrer"
                   >Rifki Nur Ikhwan</a
                 >
-                and {Slot Kosong}
+                and M Faiz Pratama Iwani
               </p>
               <p class="text-sm text-gray-500 mt-2">
                 © {{ new Date().getFullYear() }} Belajar Bareng Kami
