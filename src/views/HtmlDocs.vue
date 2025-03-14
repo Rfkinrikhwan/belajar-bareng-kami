@@ -22,8 +22,8 @@
       >
         <ul class="flex flex-wrap justify-center gap-3 md:gap-4">
           <li>
-            <a
-              href="/"
+            <router-link
+              to="/"
               class="px-3 py-1.5 md:px-4 md:py-2 rounded-md text-sm md:text-base whitespace-nowrap transition-all duration-300 transform hover:scale-105 bg-indigo-600 text-white shadow-md flex items-center"
             >
               <svg
@@ -41,11 +41,11 @@
                 />
               </svg>
               Beranda
-            </a>
+            </router-link>
           </li>
           <li>
-            <a
-              href="/network-docs"
+            <router-link
+              to="/network-docs"
               class="px-3 py-1.5 md:px-4 md:py-2 rounded-md text-sm md:text-base whitespace-nowrap transition-all duration-300 transform hover:scale-105 bg-purple-600 text-white shadow-md flex items-center"
             >
               <svg
@@ -63,7 +63,7 @@
                 />
               </svg>
               Dokumentasi Network
-            </a>
+            </router-link>
           </li>
         </ul>
       </nav>
