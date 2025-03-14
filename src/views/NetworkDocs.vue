@@ -16,9 +16,61 @@
         </p>
       </header>
 
-      <!-- Navigasi -->
+      <!-- Main Navigation Bar -->
       <nav
-        class="bg-white rounded-lg shadow-md p-3 mb-6 md:mb-8 sticky top-2 md:top-4 z-10 overflow-x-auto"
+        class="bg-white rounded-lg shadow-md p-3 mb-4 sticky top-2 md:top-4 z-20 overflow-x-auto"
+      >
+        <ul class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <li>
+            <a
+              href="/"
+              class="px-3 py-1.5 md:px-4 md:py-2 rounded-md text-sm md:text-base whitespace-nowrap transition-all duration-300 transform hover:scale-105 bg-teal-600 text-white shadow-md flex items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+              </svg>
+              Beranda
+            </a>
+          </li>
+          <li>
+            <a
+              href="/html-docs"
+              class="px-3 py-1.5 md:px-4 md:py-2 rounded-md text-sm md:text-base whitespace-nowrap transition-all duration-300 transform hover:scale-105 bg-indigo-600 text-white shadow-md flex items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+              Dokumentasi HTML
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Navigasi Section -->
+      <nav
+        class="bg-white rounded-lg shadow-md p-3 mb-6 md:mb-8 sticky top-20 md:top-24 z-10 overflow-x-auto"
       >
         <ul
           class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-4 min-w-max"
@@ -1523,6 +1575,12 @@ const checkScroll = () => {
 }
 
 onMounted(() => {
+  // Scroll to top when page loads
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto',
+  })
+
   window.addEventListener('scroll', checkScroll)
 
   // Animasi jaringan di header
