@@ -1,0 +1,264 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+<style>
+  .stepper .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stepper .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #dee2e6;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .stepper .active .circle {
+    background-color: #0d6efd;
+    color: #fff;
+  }
+
+  .stepper .line {
+    height: 2px;
+    flex-grow: 1;
+    background-color: #dee2e6;
+  }
+
+  .line_active {
+    background-color: #0d6efd !important;
+  }
+
+  .stepper .active {
+    border-radius: 50%;
+    background-color: #0d6efd;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- css untuk select2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/assets/logo/logo-edp.svg" />
+    <title>PMB STMIK Kaputama</title>
+    <link rel="stylesheet" href="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous" />
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+    body {
+      font-family: "Montserrat";
+    }
+
+    .btn-maroon {
+      background-color: #88140a !important;
+      color: #fff !important;
+    }
+
+    .btn-maroon:hover {
+      background-color: #6a0f08 !important;
+    }
+  </style>
+
+  <body>
+    <div class="container mt-5">
+      <center>
+        <img
+          src="/assets/logo/kaputama.png"
+          alt="logo-kaputama"
+          style="width: 100px" />
+        <h3 class="mt-3"><b>PMB STMIK KAPUTAMA 2025/2026</b></h3>
+        <h6 class="badge bg-primary rounded-pill">Gelombang 2</h6>
+      </center>
+      <div class="row justify-content-md-center">
+        <div
+          class="col col-lg-8 p-5 card shadow-lg border-white my-5"
+          style="border-radius: 20px">
+          <div
+            class="stepper d-flex justify-content-between align-items-center">
+            <div class="step active">
+              <div class="circle point_active">1</div>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+              <div class="circle">2</div>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+              <div class="circle">3</div>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+              <div class="circle">4</div>
+            </div>
+          </div>
+
+          <hr class="mt-5" />
+
+          <!-- Step Content -->
+          <div id="step-content" class="mt-3">
+            <div id="step-1" class="step-section">
+              <h4><b>Daftar Akun</b></h4>
+              <p>
+                Daftarkan akun anda agar bisa login dan melanjutkan step
+                berikutnya.
+              </p>
+              <p class="mt-3 alert alert-info">
+                Jika sudah punya akun atau sudah pernah melewati tahap ini?
+                silahkan <a href="/login"> Login</a>
+                <br />
+                <br />
+                <a
+                  target="_blank"
+                  class="btn btn-sm btn-info rounded-pill"
+                  href="https://api.whatsapp.com/send/?phone=82366304242&text=Halo+Admin+STMIK+Kaputama+saya+ingin+bertanya+tentang+akun+PMB+saya&type=phone_number&app_absent=0"
+                  >Hubungi admin jika ada pertanyaan</a
+                >
+              </p>
+
+              <form action="/daftar/step-1" method="post" class="mt-5">
+                <input
+                  type="hidden"
+                  name="_token"
+                  value="tD6IekSsyfg7KQ0KX9VYN9ogW6kHiOce77M6Qwv1"
+                  autocomplete="off" />
+                <input type="hidden" name="gelombang" value="7" />
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <label for="nama_lengkap"
+                      >Nama Lengkap<sup class="text-danger">*</sup></label
+                    >
+                    <input
+                      type="text"
+                      required
+                      name="nama_lengkap"
+                      id="nama_lengkap"
+                      class="form-control"
+                      placeholder="Masukkan nama lengkap anda" />
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="nomor_wa"
+                      >No WA<sup class="text-danger">*</sup></label
+                    >
+                    <input
+                      type="number"
+                      required
+                      name="nomor_wa"
+                      id="nomor_wa"
+                      class="form-control"
+                      placeholder="Masukkan nomor hp/wa anda" />
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="email"
+                      >Email<sup class="text-danger">*</sup></label
+                    >
+                    <input
+                      type="email"
+                      required
+                      name="email"
+                      id="email"
+                      class="form-control"
+                      placeholder="Masukkan email anda" />
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="password"
+                      >Password<sup class="text-danger">*</sup></label
+                    >
+                    <input
+                      type="password"
+                      required
+                      name="password"
+                      id="password"
+                      class="form-control"
+                      placeholder="Masukkan password anda" />
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="retype_password"
+                      >Retype Password<sup class="text-danger">*</sup></label
+                    >
+                    <input
+                      type="password"
+                      required
+                      name="retype_password"
+                      id="retypePassword"
+                      class="form-control"
+                      placeholder="Masukkan password anda" />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled
+                  id="submitButton"
+                  class="btn btn-primary rounded-pill float-end"
+                  style="margin-top: 40px">
+                  SELANJUTNYA <i class="bi bi-chevron-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="2fd54ca23269ac83d26ac826-text/javascript">
+      const passwordInput = document.getElementById('password');
+      const retypePasswordInput = document.getElementById('retypePassword');
+      const submitButton = document.getElementById('submitButton');
+
+      function checkPasswords() {
+          const password = passwordInput.value;
+          const retypePassword = retypePasswordInput.value;
+
+          if (password === retypePassword && password.length > 0) {
+              submitButton.disabled = false;
+          } else {
+              submitButton.disabled = true;
+          }
+      }
+
+      // Tambahkan event listener pada input password dan retype password
+      passwordInput.addEventListener('input', checkPasswords);
+      retypePasswordInput.addEventListener('input', checkPasswords);
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+      type="2fd54ca23269ac83d26ac826-text/javascript"></script>
+
+    <script
+      src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+      data-cf-settings="2fd54ca23269ac83d26ac826-|49"
+      defer></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"rayId":"92ea7d366f4391b7","version":"2025.3.0","r":1,"token":"e44201ce6299491cb33fb64927af4974","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}'
+      crossorigin="anonymous"></script>
+  </body>
+</html>
