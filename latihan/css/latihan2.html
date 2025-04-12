@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Praktik CSS Teks Lengkap</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 40px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        vertical-align: top;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .example {
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px dashed #999;
+      }
+
+      /* Warna */
+      .color-red {
+        color: red;
+      }
+      .color-green {
+        color: green;
+      }
+      .color-blue {
+        color: blue;
+      }
+      .color-dst {
+        color: darkslategray;
+      }
+
+      /* Letter Spacing */
+      .letter-normal {
+        letter-spacing: normal;
+      }
+      .letter-length {
+        letter-spacing: 5px;
+      }
+
+      /* Text Align */
+      .align-left {
+        text-align: left;
+      }
+      .align-center {
+        text-align: center;
+      }
+      .align-right {
+        text-align: right;
+      }
+      .align-justify {
+        text-align: justify;
+      }
+
+      /* Text Decoration */
+      .dec-none {
+        text-decoration: none;
+      }
+      .dec-underline {
+        text-decoration: underline;
+      }
+      .dec-overline {
+        text-decoration: overline;
+      }
+      .dec-line-through {
+        text-decoration: line-through;
+      }
+      .dec-blink {
+        text-decoration: blink;
+      } /* Tidak didukung sebagian besar browser */
+
+      /* Text Indent */
+      .indent-length {
+        text-indent: 40px;
+      }
+      .indent-percent {
+        text-indent: 10%;
+      }
+
+      /* Text Transform */
+      .tt-capitalize {
+        text-transform: capitalize;
+      }
+      .tt-uppercase {
+        text-transform: uppercase;
+      }
+      .tt-lowercase {
+        text-transform: lowercase;
+      }
+      .tt-none {
+        text-transform: none;
+      }
+
+      /* Font Family */
+      .font-arial {
+        font-family: Arial, sans-serif;
+      }
+      .font-comic {
+        font-family: "Comic Sans MS", cursive;
+      }
+      .font-dst {
+        font-family: Georgia, serif;
+      }
+
+      /* Font Size */
+      .size-small {
+        font-size: small;
+      }
+      .size-medium {
+        font-size: medium;
+      }
+      .size-large {
+        font-size: large;
+      }
+      .size-length {
+        font-size: 24px;
+      }
+      .size-percent {
+        font-size: 150%;
+      }
+
+      /* Font Style */
+      .style-normal {
+        font-style: normal;
+      }
+      .style-italic {
+        font-style: italic;
+      }
+      .style-oblique {
+        font-style: oblique;
+      }
+
+      /* Font Weight */
+      .weight-normal {
+        font-weight: normal;
+      }
+      .weight-bold {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contoh CSS - Text Styling</h1>
+
+    <table>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+        <th>Output</th>
+      </tr>
+
+      <!-- Color -->
+      <tr>
+        <td rowspan="4">color</td>
+        <td>red</td>
+        <td><div class="example color-red">Contoh teks merah</div></td>
+      </tr>
+      <tr>
+        <td>green</td>
+        <td><div class="example color-green">Contoh teks hijau</div></td>
+      </tr>
+      <tr>
+        <td>blue</td>
+        <td><div class="example color-blue">Contoh teks biru</div></td>
+      </tr>
+      <tr>
+        <td>dst (darkslategray)</td>
+        <td><div class="example color-dst">Contoh teks abu gelap</div></td>
+      </tr>
+
+      <!-- Letter Spacing -->
+      <tr>
+        <td rowspan="2">letter-spacing</td>
+        <td>normal</td>
+        <td>
+          <div class="example letter-normal">Teks tanpa jarak tambahan</div>
+        </td>
+      </tr>
+      <tr>
+        <td>length (5px)</td>
+        <td>
+          <div class="example letter-length">T e k s d e n g a n j a r a k</div>
+        </td>
+      </tr>
+
+      <!-- Text Align -->
+      <tr>
+        <td rowspan="3">text-align</td>
+        <td>left</td>
+        <td><div class="example align-left">Teks rata kiri</div></td>
+      </tr>
+      <tr>
+        <td>center</td>
+        <td><div class="example align-center">Teks rata tengah</div></td>
+      </tr>
+      <tr>
+        <td>right</td>
+        <td><div class="example align-right">Teks rata kanan</div></td>
+      </tr>
+      <tr>
+        <td>text-align</td>
+        <td>justify</td>
+        <td>
+          <div class="example align-justify">
+            Teks ini disusun agar memenuhi lebar kontainer, menggunakan
+            penyusunan justify agar teksnya terlihat rapi di kedua sisi.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Text Decoration -->
+      <tr>
+        <td rowspan="5">text-decoration</td>
+        <td>none</td>
+        <td><div class="example dec-none">Tanpa dekorasi</div></td>
+      </tr>
+      <tr>
+        <td>underline</td>
+        <td><div class="example dec-underline">Teks bergaris bawah</div></td>
+      </tr>
+      <tr>
+        <td>overline</td>
+        <td><div class="example dec-overline">Teks bergaris atas</div></td>
+      </tr>
+      <tr>
+        <td>line-through</td>
+        <td><div class="example dec-line-through">Teks dicoret</div></td>
+      </tr>
+      <tr>
+        <td>blink</td>
+        <td>
+          <div class="example dec-blink">Teks blink (tidak semua browser)</div>
+        </td>
+      </tr>
+
+      <!-- Text Indent -->
+      <tr>
+        <td rowspan="2">text-indent</td>
+        <td>length (40px)</td>
+        <td>
+          <div class="example indent-length">
+            Paragraf ini memiliki indentasi awal 40px.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>% (10%)</td>
+        <td>
+          <div class="example indent-percent">
+            Paragraf ini menggunakan indentasi 10% dari lebar elemen.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Text Transform -->
+      <tr>
+        <td rowspan="4">text-transform</td>
+        <td>capitalize</td>
+        <td><div class="example tt-capitalize">setiap awal kata besar</div></td>
+      </tr>
+      <tr>
+        <td>uppercase</td>
+        <td><div class="example tt-uppercase">teks huruf besar semua</div></td>
+      </tr>
+      <tr>
+        <td>lowercase</td>
+        <td><div class="example tt-lowercase">TEKS DIKECILKAN SEMUA</div></td>
+      </tr>
+      <tr>
+        <td>none</td>
+        <td><div class="example tt-none">Teks apa adanya</div></td>
+      </tr>
+
+      <!-- Font Family -->
+      <tr>
+        <td rowspan="3">font-family</td>
+        <td>Arial</td>
+        <td><div class="example font-arial">Teks dengan Arial</div></td>
+      </tr>
+      <tr>
+        <td>Comic Sans</td>
+        <td><div class="example font-comic">Teks dengan Comic Sans</div></td>
+      </tr>
+      <tr>
+        <td>dst (Georgia)</td>
+        <td><div class="example font-dst">Teks dengan Georgia</div></td>
+      </tr>
+
+      <!-- Font Size -->
+      <tr>
+        <td rowspan="5">font-size</td>
+        <td>small</td>
+        <td><div class="example size-small">Teks kecil</div></td>
+      </tr>
+      <tr>
+        <td>medium</td>
+        <td><div class="example size-medium">Teks sedang</div></td>
+      </tr>
+      <tr>
+        <td>large</td>
+        <td><div class="example size-large">Teks besar</div></td>
+      </tr>
+      <tr>
+        <td>length (24px)</td>
+        <td><div class="example size-length">Teks 24px</div></td>
+      </tr>
+      <tr>
+        <td>% (150%)</td>
+        <td><div class="example size-percent">Teks 150%</div></td>
+      </tr>
+
+      <!-- Font Style -->
+      <tr>
+        <td rowspan="3">font-style</td>
+        <td>normal</td>
+        <td><div class="example style-normal">Teks normal</div></td>
+      </tr>
+      <tr>
+        <td>italic</td>
+        <td><div class="example style-italic">Teks miring italic</div></td>
+      </tr>
+      <tr>
+        <td>oblique</td>
+        <td><div class="example style-oblique">Teks miring oblique</div></td>
+      </tr>
+
+      <!-- Font Weight -->
+      <tr>
+        <td rowspan="2">font-weight</td>
+        <td>normal</td>
+        <td><div class="example weight-normal">Teks biasa</div></td>
+      </tr>
+      <tr>
+        <td>bold</td>
+        <td><div class="example weight-bold">Teks tebal</div></td>
+      </tr>
+    </table>
+  </body>
+</html>

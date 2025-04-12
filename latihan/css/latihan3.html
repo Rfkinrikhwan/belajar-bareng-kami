@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Website Sederhana</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 100px;
+        background-color: #ffffff;
+      }
+
+      /* Header */
+      .header {
+        background-color: #ffffcc;
+        padding: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      /* Container untuk isi dan sidebar */
+      .container {
+        display: flex;
+        margin: 20px;
+      }
+
+      /* Konten utama */
+      .content {
+        flex: 3;
+        padding: 20px;
+        border: 1px solid #aaa;
+        margin-right: 10px;
+      }
+
+      .content img {
+        float: left;
+        margin-right: 10px;
+        width: 200px;
+        height: auto;
+      }
+
+      /* Sidebar navigasi */
+      .sidebar {
+        flex: 1;
+        padding: 20px;
+        background-color: #ffe6ff;
+        border: 1px solid #aaa;
+      }
+
+      .sidebar h3 {
+        color: purple;
+        margin-top: 0;
+      }
+
+      .sidebar ul {
+        padding-left: 20px;
+      }
+
+      .sidebar ul li a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      .sidebar ul li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #fbb7f5;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        color: #000;
+        border-top: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">Selamat Datang di Website Kami</div>
+
+    <!-- Konten dan Sidebar -->
+    <div class="container">
+      <div class="content">
+        <img
+          src="https://imgs.search.brave.com/H43XMBpUbrr54LiDYVWM7aT-gspVOfSOkVj1b1MdKSM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9saXR0bGUtY2hp/bGRyZW4tc21pbGlu/Zy1jYW1lcmFfMTMz/MzktMTAzNzIwLmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDA"
+          alt="Foto Anak Kecil" />
+        <p>
+          Ini adalah bagian isi. Membuat tampilan website lebih menarik dan
+          halaman website lebih terstruktur dengan memanfaatkan CSS. Dengan CSS,
+          tidak memerlukan tabel dalam menata layout. Kelebihan CSS dalam layout
+          web dibandingkan tabel adalah fleksibilitas dan juga lebih
+          meminimalkan jumlah byte file.
+        </p>
+      </div>
+
+      <div class="sidebar">
+        <h3>Menu Navigasi</h3>
+        <ul>
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#">KRS</a></li>
+          <li><a href="#">KHS</a></li>
+          <li><a href="#">Daftar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Copyright © 2013 by Mr. B</div>
+  </body>
+</html>
