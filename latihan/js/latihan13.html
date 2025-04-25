@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan</title>
+  </head>
+  <body>
+    <h3>Menghitung Total Gaji</h3>
+
+    <script>
+      let gajiPerHari, jamLembur, gajiLembur, hariKerja, bonus, totalGaji;
+
+      gajiPerHari = 50000;
+      jamLembur = 2;
+      hariKerja = 20;
+      gajiLembur = 0;
+      bonus = 0;
+      totalGaji = 0;
+
+      if (jamLembur >= 3) {
+        gajiLembur = 35000 * jamLembur;
+      } else if (jamLembur >= 1) {
+        gajiLembur = 25000 * jamLembur;
+      }
+
+      if (hariKerja >= 20) {
+        bonus = 5000 * hariKerja;
+      }
+
+      totalGaji = hariKerja * gajiPerHari + bonus + gajiLembur;
+
+      document.writeln("Gaji Per Hari : " + gajiPerHari + " <br>");
+      document.writeln("Jam Lembur : " + jamLembur + " <br>");
+      document.writeln("Gaji Lembur : " + gajiLembur + " <br>");
+      document.writeln("Hari Kerja : " + hariKerja + " <br>");
+      if (hariKerja >= 20) {
+        document.writeln("Bonus : " + bonus + " <br>");
+      }
+      document.writeln("Total Gaji : " + totalGaji + " <br>");
+    </script>
+  </body>
+</html>

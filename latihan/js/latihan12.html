@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan</title>
+  </head>
+  <body>
+    <h3>
+      Menghitung Harga Yang di bayar dan jika jumlah barang lebih dari atau sama
+      dengan 3 maka mendapatkan diskon 10%
+    </h3>
+
+    <script>
+      let nama, harga, jumlah, total, diskon;
+
+      nama = "Penggaris Besi ";
+      harga = 1000;
+      jumlah = 3;
+      diskon = 0;
+
+      if (jumlah >= 3) {
+        diskon = harga * jumlah * 0.1;
+      }
+
+      total = harga * jumlah - diskon;
+
+      document.writeln("Nama Barang : " + nama + " <br>");
+      document.writeln("Jumlah Barang : " + jumlah + " <br>");
+      document.writeln("Harga Barang : " + harga + " <br>");
+      if (jumlah >= 3) {
+        document.writeln("Diskon : " + diskon + " <br>");
+      }
+      document.writeln("Total Bayar : " + total + " <br>");
+    </script>
+  </body>
+</html>
