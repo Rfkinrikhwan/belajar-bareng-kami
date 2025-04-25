@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan</title>
+    <title>While</title>
   </head>
   <body>
-    <h3>Perulangan Menggunakan For</h3>
+    <h3>Perulangan Menggunakan While</h3>
 
     <script>
-      for (let index = 0; index < 10; index++) {
-        document.writeln(index + "<br>");
+      let i = 0;
+
+      while (i < 10) {
+        document.writeln(i + "<br>");
+        i++; // ini yang salah, sehingga membuat loop terus menerus
       }
     </script>
   </body>
