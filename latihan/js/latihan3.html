@@ -7,32 +7,35 @@
   </head>
   <body>
     <h3>Statement Control Menggunakan IF</h3>
-    <form>
+    <!-- <form>
       Nilai: <input type="number" id="nilai" />
       <button type="button" onclick="konversiNilai()">Konversi</button>
       <p id="hasil"></p>
-    </form>
+    </form> -->
 
     <script>
-      function konversiNilai() {
-        let nilai = document.getElementById("nilai").value;
+      // function konversiNilai() {
+      // }
+      let nilai = 60;
 
-        if (nilai >= 80 && nilai <= 100) {
-          document.getElementById("hasil").innerHTML =
-            "Selamat Anda Lulus dengan predikat A karena nilai kamu " + nilai;
-        } else if (nilai >= 70 && nilai < 80) {
-          document.getElementById("hasil").innerHTML =
-            "Selamat Anda Lulus dengan predikat B karena nilai kamu " + nilai;
-        } else if (nilai >= 60 && nilai < 70) {
-          document.getElementById("hasil").innerHTML =
-            "Selamat Anda Lulus dengan predikat C karena nilai kamu " + nilai;
-        } else if (nilai >= 50 && nilai < 60) {
-          document.getElementById("hasil").innerHTML =
-            "Selamat Anda Lulus dengan predikat D karena nilai kamu " + nilai;
-        } else {
-          document.getElementById("hasil").innerHTML =
-            "Maaf Kamu tidak lulus karena nilai kamu " + nilai;
-        }
+      if (nilai >= 80 && nilai <= 100) {
+        document.writeln(
+          "Selamat Anda Lulus dengan predikat A karena nilai kamu " + nilai
+        );
+      } else if (nilai >= 70 && nilai < 80) {
+        document.writeln(
+          "Selamat Anda Lulus dengan predikat B karena nilai kamu " + nilai
+        );
+      } else if (nilai >= 60 && nilai < 70) {
+        document.writeln(
+          "Selamat Anda Lulus dengan predikat C karena nilai kamu " + nilai
+        );
+      } else if (nilai >= 50 && nilai < 60) {
+        document.writeln(
+          "Selamat Anda Lulus dengan predikat D karena nilai kamu " + nilai
+        );
+      } else {
+        document.writeln("Maaf Kamu tidak lulus karena nilai kamu " + nilai);
       }
     </script>
   </body>
