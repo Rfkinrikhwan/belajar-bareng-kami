@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Billing Online</title>
+  </head>
+  <body>
+    <script>
+      var detik = 5000;
+
+      var jam = Math.floor(detik / 3600);
+      var sisaDetik = detik % 3600;
+      var menit = Math.floor(sisaDetik / 60);
+      var detikSisa = sisaDetik % 60;
+
+      var pulsa = Math.ceil(detik / 45);
+
+      var totalBayar = pulsa * 30;
+
+      document.write("<h2>Billing Online</h2>");
+      document.write(
+        "Waktu pemakaian: " +
+          jam +
+          " jam " +
+          menit +
+          " menit " +
+          detikSisa +
+          " detik<br>"
+      );
+      document.write("Jumlah pulsa: " + pulsa + "<br>");
+      document.write("Total bayar: Rp " + totalBayar);
+    </script>
+  </body>
+</html>
