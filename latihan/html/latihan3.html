@@ -1,76 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan Table</title>
+    <title>Jadwal & Daftar Mahasiswa</title>
+    <style>
+      :root {
+        --primary-color: #3b82f6;
+        --primary-light: #93c5fd;
+        --primary-dark: #1d4ed8;
+        --secondary-color: #475569;
+        --accent-color: #f97316;
+        --light-bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --border-radius: 8px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1,
+      h2 {
+        color: var(--secondary-color);
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      h1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+        font-size: 1.5rem;
+      }
+
+      .section-title i {
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+      }
+
+      /* Table Styles */
+      .table-responsive {
+        overflow-x: auto;
+        margin-bottom: 1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 0.95rem;
+      }
+
+      .schedule-table {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+      }
+
+      .student-table {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        margin: 0 auto;
+        max-width: 800px;
+      }
+
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border: 1px solid #e2e8f0;
+      }
+
+      th {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .schedule-table tr:nth-child(even) {
+        background-color: #f1f5f9;
+      }
+
+      .schedule-table tr:hover {
+        background-color: #e2e8f0;
+      }
+
+      .day-column {
+        background-color: var(--primary-dark);
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .time-column {
+        white-space: nowrap;
+        font-weight: 500;
+      }
+
+      .subject-column {
+        font-weight: 500;
+        color: var(--primary-dark);
+      }
+
+      /* Student Table Specific */
+      .student-header {
+        background-color: var(--secondary-color);
+      }
+
+      .grade-a {
+        color: var(--success);
+        font-weight: bold;
+      }
+
+      .grade-b {
+        color: var(--warning);
+        font-weight: bold;
+      }
+
+      .grade-column {
+        text-align: center;
+      }
+
+      .score-column {
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .student-table tr:hover {
+        background-color: #f1f5f9;
+      }
+
+      /* Badges */
+      .badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+        display: inline-block;
+      }
+
+      .badge-primary {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        margin-top: 2rem;
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 1.75rem;
+        }
+
+        .card {
+          padding: 1rem;
+        }
+
+        th,
+        td {
+          padding: 0.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <table border="1">
-      <tr>
-        <th rowspan="5">Senin</th>
-        <th>Jam</th>
-        <th>Mata Pelajaran</th>
-        <th>Kelas</th>
-        <th>Ruang</th>
-        <th>Pengajar</th>
-      </tr>
-      <tr>
-        <td>08.00-09.00</td>
-        <td>Matematika</td>
-        <td>XII MIPA 1</td>
-        <td>Kelas 1</td>
-        <td>Bapak Rudi</td>
-      </tr>
-      <tr>
-        <td>09.00-10.00</td>
-        <td>Bahasa Indonesia</td>
-        <td>XII MIPA 1</td>
-        <td>Kelas 2</td>
-        <td>Ibu Siti</td>
-      </tr>
-      <tr>
-        <td>10.00-11.00</td>
-        <td>Bahasa Inggris</td>
-        <td>XII MIPA 1</td>
-        <td>Kelas 3</td>
-        <td>Bapak Anton</td>
-      </tr>
-      <tr>
-        <td>11.00-12.00</td>
-        <td>Fisika</td>
-        <td>XII MIPA 1</td>
-        <td>Kelas 4</td>
-        <td>Bapak Agus</td>
-      </tr>
-    </table>
+    <div class="container">
+      <section class="card">
+        <h2 class="section-title"><i>📅</i> Jadwal Pelajaran</h2>
+        <div class="table-responsive">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th rowspan="1">Hari</th>
+                <th>Jam</th>
+                <th>Mata Pelajaran</th>
+                <th>Kelas</th>
+                <th>Ruang</th>
+                <th>Pengajar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4" class="day-column">Senin</td>
+                <td class="time-column">08.00-09.00</td>
+                <td class="subject-column">Matematika</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 1</td>
+                <td>Bapak Rudi</td>
+              </tr>
+              <tr>
+                <td class="time-column">09.00-10.00</td>
+                <td class="subject-column">Bahasa Indonesia</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 2</td>
+                <td>Ibu Siti</td>
+              </tr>
+              <tr>
+                <td class="time-column">10.00-11.00</td>
+                <td class="subject-column">Bahasa Inggris</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 3</td>
+                <td>Bapak Anton</td>
+              </tr>
+              <tr>
+                <td class="time-column">11.00-12.00</td>
+                <td class="subject-column">Fisika</td>
+                <td>XII MIPA 1</td>
+                <td>Kelas 4</td>
+                <td>Bapak Agus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-    <h1 align="center">Daftar Mahasiswa</h1>
-    <table border="1" align="center">
-      <tr bgcolor="#999999">
-        <td width="100" align="center" rowspan="2">Nama Mahasiswa</td>
-        <td width="200" align="center" rowspan="2">Jurusan</td>
-        <td width="100" align="center" colspan="2">Nilai</td>
-        <td width="100" align="center" rowspan="2">Nilai Akhir</td>
-      </tr>
-      <tr bgcolor="#999999">
-        <td width="100" align="center">UTS</td>
-        <td width="100" align="center">UAS</td>
-      </tr>
-      <tr>
-        <td>Paijio</td>
-        <td>TIK</td>
-        <td>80</td>
-        <td>75</td>
-        <td>B</td>
-      </tr>
-      <tr>
-        <td>Karsono</td>
-        <td>SI</td>
-        <td>85</td>
-        <td>90</td>
-        <td>A</td>
-      </tr>
-    </table>
+      <section class="card">
+        <h1>Daftar Mahasiswa</h1>
+        <div class="table-responsive">
+          <table class="student-table">
+            <thead>
+              <tr class="student-header">
+                <th rowspan="2">Nama Mahasiswa</th>
+                <th rowspan="2">Jurusan</th>
+                <th colspan="2">Nilai</th>
+                <th rowspan="2">Nilai Akhir</th>
+              </tr>
+              <tr class="student-header">
+                <th>UTS</th>
+                <th>UAS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paijio</td>
+                <td><span class="badge badge-primary">TIK</span></td>
+                <td class="score-column">80</td>
+                <td class="score-column">75</td>
+                <td class="grade-column grade-b">B</td>
+              </tr>
+              <tr>
+                <td>Karsono</td>
+                <td><span class="badge badge-primary">SI</span></td>
+                <td class="score-column">85</td>
+                <td class="score-column">90</td>
+                <td class="grade-column grade-a">A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Sistem Informasi Akademik</p>
+      </footer>
+    </div>
   </body>
 </html>

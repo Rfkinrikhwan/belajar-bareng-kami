@@ -3,91 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sidebar Menu</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        overflow-x: hidden;
+      }
+
+      .sidebar {
+        width: 250px;
+        background-color: #1e1e2f;
+        color: white;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .sidebar h4 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        color: #ccc;
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .sidebar li {
+        margin: 5px 0;
+      }
+
+      .sidebar a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        padding: 10px 15px;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      .sidebar a:hover {
+        background-color: #2a2a40;
+        color: #fff;
+        border-left: 4px solid #00c8ff;
+        transform: translateX(5px);
+      }
+
+      .sidebar a::before {
+        content: "→";
+        position: absolute;
+        left: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease, left 0.3s ease;
+      }
+
+      .sidebar a:hover::before {
+        opacity: 1;
+        left: -15px;
+      }
+    </style>
   </head>
   <body>
-    <h4>Latihan HTML</h4>
-    <ul>
-      <li>
-        <a href="latihan/html/latihan1.html" target="content">Latihan 1</a>
-      </li>
-      <li>
-        <a href="latihan/html/latihan2.html" target="content">Latihan 2</a>
-      </li>
-      <li>
-        <a href="latihan/html/latihan3.html" target="content">Latihan 3</a>
-      </li>
-      <li>
-        <a href="latihan/html/latihan4.html" target="content">Latihan 4</a>
-      </li>
-      <li>
-        <a href="latihan/html/latihan5.html" target="content">Latihan 5</a>
-      </li>
-    </ul>
+    <div class="sidebar">
+      <h4>📄 Latihan HTML</h4>
+      <ul>
+        <li>
+          <a href="latihan/html/latihan1.html" target="content">Latihan 1</a>
+        </li>
+        <li>
+          <a href="latihan/html/latihan2.html" target="content">Latihan 2</a>
+        </li>
+        <li>
+          <a href="latihan/html/latihan3.html" target="content">Latihan 3</a>
+        </li>
+        <li>
+          <a href="latihan/html/latihan4.html" target="content">Latihan 4</a>
+        </li>
+        <li>
+          <a href="latihan/html/latihan5.html" target="content">Latihan 5</a>
+        </li>
+      </ul>
 
-    <h4>Latihan CSS</h4>
-    <ul>
-      <li>
-        <a href="latihan/css/latihan1.html" target="content">Latihan 1</a>
-      </li>
-      <li>
-        <a href="latihan/css/latihan2.html" target="content">Latihan 2</a>
-      </li>
-      <li>
-        <a href="latihan/css/latihan3.html" target="content">Latihan 3</a>
-      </li>
-      <li>
-        <a href="latihan/css/latihan4.html" target="content">Latihan 4</a>
-      </li>
-      <li>
-        <a href="latihan/css/latihan5.html" target="content">Latihan 5</a>
-      </li>
-    </ul>
+      <h4>🎨 Latihan CSS</h4>
+      <ul>
+        <li>
+          <a href="latihan/css/latihan1.html" target="content">Latihan 1</a>
+        </li>
+        <li>
+          <a href="latihan/css/latihan2.html" target="content">Latihan 2</a>
+        </li>
+        <li>
+          <a href="latihan/css/latihan3.html" target="content">Latihan 3</a>
+        </li>
+        <li>
+          <a href="latihan/css/latihan4.html" target="content">Latihan 4</a>
+        </li>
+        <li>
+          <a href="latihan/css/latihan5.html" target="content">Latihan 5</a>
+        </li>
+      </ul>
 
-    <h4>Latihan JavaScript</h4>
-    <ul>
-      <li>
-        <a href="latihan/js/latihan1.html" target="content">Latihan 1</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan2.html" target="content">Latihan 2</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan3.html" target="content">Latihan 3</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan4.html" target="content">Latihan 4</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan5.html" target="content">Latihan 5</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan6.html" target="content">Latihan 6</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan7.html" target="content">Latihan 7</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan8.html" target="content">Latihan 8</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan9.html" target="content">Latihan 9</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan10.html" target="content">Latihan 10</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan11.html" target="content">Latihan 11</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan12.html" target="content">Latihan 12</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan13.html" target="content">Latihan 13</a>
-      </li>
-      <li>
-        <a href="latihan/js/latihan14.html" target="content">Latihan 14</a>
-      </li>
-    </ul>
+      <h4>💡 Latihan JavaScript</h4>
+      <ul>
+        <li>
+          <a href="latihan/js/latihan1.html" target="content">Latihan 1</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan2.html" target="content">Latihan 2</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan3.html" target="content">Latihan 3</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan4.html" target="content">Latihan 4</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan5.html" target="content">Latihan 5</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan6.html" target="content">Latihan 6</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan7.html" target="content">Latihan 7</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan8.html" target="content">Latihan 8</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan9.html" target="content">Latihan 9</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan10.html" target="content">Latihan 10</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan11.html" target="content">Latihan 11</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan12.html" target="content">Latihan 12</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan13.html" target="content">Latihan 13</a>
+        </li>
+        <li>
+          <a href="latihan/js/latihan14.html" target="content">Latihan 14</a>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

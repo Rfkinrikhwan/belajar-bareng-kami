@@ -1,45 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Overview Kelompok</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #2e2e40;
+        margin-bottom: 10px;
+      }
+
+      p.subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+      }
+
+      thead {
+        background: linear-gradient(to right, #1e1e2f, #2e2e40);
+        color: white;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tbody tr:hover {
+        background-color: #e0f7fa;
+        transition: 0.3s;
+      }
+
+      img {
+        width: 80px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 600px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+
+        thead {
+          display: none;
+        }
+
+        tr {
+          margin-bottom: 20px;
+          border: 1px solid #ddd;
+          padding: 10px;
+          background: #fff;
+        }
+
+        td {
+          text-align: left;
+          padding-left: 50%;
+          position: relative;
+        }
+
+        td::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 15px;
+          width: 45%;
+          font-weight: bold;
+          color: #444;
+        }
+
+        img {
+          margin-top: 10px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1 align="center">
-      Ini Adalah Kelompok Kami Yang Gemar Belajar dan Membaca Buku
-    </h1>
-    <table border="1" align="center" style="width: 80%">
-      <tr>
-        <th>Nama</th>
-        <th>NPM</th>
-        <th>Jurusan</th>
-        <th>Foto</th>
-      </tr>
-      <tr>
-        <td>Rifki Nur Ikhwan</td>
-        <th>24451054</th>
-        <th>Teknik Informatika</th>
-        <th>
-          <img src="../assets/Rifki Nur Ikhwan.jpeg" width="100" alt="" />
-        </th>
-      </tr>
-      <tr>
-        <td>Muhammad Rizna Taris</td>
-        <th>24451035</th>
-        <th>Teknik Informatika</th>
-        <th>
-          <img src="../assets/Taris.jpeg" width="100" alt="" />
-        </th>
-      </tr>
-      <tr>
-        <td>Muhammad Faiz Iwani Pratama</td>
-        <th>24451030</th>
-        <th>Teknik Informatika</th>
-        <th>
-          <img src="../assets/M Faiz.jpeg" width="100" alt="" />
-        </th>
-      </tr>
-    </table>
+    <div class="container">
+      <h1>Anggota Kelompok Kami</h1>
+      <p class="subtitle">
+        Kelompok kami terdiri dari mahasiswa yang gemar belajar dan membaca
+        buku.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>NPM</th>
+            <th>Jurusan</th>
+            <th>Foto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Nama">Rifki Nur Ikhwan</td>
+            <td data-label="NPM">24451054</td>
+            <td data-label="Jurusan">Teknik Informatika</td>
+            <td data-label="Foto">
+              <img
+                src="../assets/Rifki Nur Ikhwan.jpeg"
+                alt="Rifki Nur Ikhwan" />
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Nama">Muhammad Rizna Taris</td>
+            <td data-label="NPM">24451035</td>
+            <td data-label="Jurusan">Teknik Informatika</td>
+            <td data-label="Foto">
+              <img src="../assets/Taris.jpeg" alt="Muhammad Rizna Taris" />
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Nama">Muhammad Faiz Iwani Pratama</td>
+            <td data-label="NPM">24451030</td>
+            <td data-label="Jurusan">Teknik Informatika</td>
+            <td data-label="Foto">
+              <img
+                src="../assets/M Faiz.jpeg"
+                alt="Muhammad Faiz Iwani Pratama" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

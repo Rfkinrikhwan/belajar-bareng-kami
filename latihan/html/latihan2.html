@@ -1,43 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=
-    , initial-scale=1.0" />
-    <title>Latihan 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dokumentasi Mata Pelajaran</title>
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --light-bg: #f8f9fa;
+        --card-bg: #ffffff;
+        --text-primary: #333333;
+        --text-secondary: #666666;
+        --spacing-sm: 8px;
+        --spacing-md: 16px;
+        --spacing-lg: 24px;
+        --spacing-xl: 32px;
+        --border-radius: 10px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: var(--spacing-xl);
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: var(--spacing-lg);
+        background-color: var(--card-bg);
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius);
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+        padding-bottom: var(--spacing-lg);
+        border-bottom: 2px solid var(--primary-color);
+      }
+
+      h1 {
+        color: var(--secondary-color);
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-md);
+      }
+
+      h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin: var(--spacing-xl) 0 var(--spacing-md);
+        padding-bottom: var(--spacing-sm);
+        border-bottom: 2px solid var(--primary-color);
+      }
+
+      .section {
+        margin-bottom: var(--spacing-xl);
+        padding: var(--spacing-lg);
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+      }
+
+      .level-item {
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .level-title {
+        background-color: var(--primary-color);
+        color: white;
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+
+      .level-title .icon {
+        margin-right: var(--spacing-md);
+        font-size: 1.5rem;
+      }
+
+      .level-content {
+        background-color: white;
+        padding: var(--spacing-lg);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        border: 1px solid #e0e0e0;
+        border-top: none;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      li {
+        padding: var(--spacing-sm) 0;
+      }
+
+      .subject {
+        display: flex;
+        align-items: center;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+        transition: all 0.3s ease;
+      }
+
+      .subject:hover {
+        background-color: rgba(52, 152, 219, 0.1);
+        transform: translateX(5px);
+      }
+
+      .subject::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        margin-right: var(--spacing-md);
+      }
+
+      .gallery {
+        margin-top: var(--spacing-xl);
+      }
+
+      .gallery-title {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin-bottom: var(--spacing-md);
+        padding-bottom: var(--spacing-sm);
+        border-bottom: 2px dashed var(--primary-color);
+      }
+
+      .img-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-md);
+      }
+
+      .img-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .img-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .img-card h3 {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: var(--spacing-md);
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .img-container {
+        padding: var(--spacing-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: var(--spacing-sm);
+      }
+
+      .bordered-img {
+        border: 3px solid var(--accent-color);
+        padding: 4px;
+      }
+
+      .spaced-img {
+        margin: 0 var(--spacing-xl);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: var(--spacing-xl);
+        padding-top: var(--spacing-md);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .img-showcase {
+          grid-template-columns: 1fr;
+        }
+
+        body {
+          padding: var(--spacing-md);
+        }
+
+        .container {
+          padding: var(--spacing-md);
+        }
+      }
+    </style>
   </head>
   <body>
-    <h2>mapel</h2>
-    <ol type="1">
-      <li>SD</li>
-      <ul type="square">
-        <li>B.Inggris</li>
-        <li>B.Arab</li>
-        <li>Matematika</li>
-        <li>B.Indonesia</li>
-      </ul>
-      <li>SMP</li>
-      <ul type="square">
-        <li>PJOK</li>
-        <li>B.Korea</li>
-        <li>Tahfidz</li>
-      </ul>
-    </ol>
-    <p>gambar tanpa format</p>
-    <img
-      src="https://imgs.search.brave.com/OIRecmsGTMIERIP_NB6JtGSsfZUNcX-H0qDEt-fyhUU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z3N0YXRpYy5jb20v/YWl0ZXN0a2l0Y2hl/bi93ZWJzaXRlL2Nv/bnRlbnQvaW1hZ2Ut/ZngtcGxlYXNlLXNp/Z24taW4ud2VicA"
-      height="100" />
-    <p>gambar dengan format hspace</p>
-    <img
-      src="https://imgs.search.brave.com/OIRecmsGTMIERIP_NB6JtGSsfZUNcX-H0qDEt-fyhUU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z3N0YXRpYy5jb20v/YWl0ZXN0a2l0Y2hl/bi93ZWJzaXRlL2Nv/bnRlbnQvaW1hZ2Ut/ZngtcGxlYXNlLXNp/Z24taW4ud2VicA"
-      height="100"
-      hspace="100" />
-    <p>gambar dengan border</p>
-    <img
-      src="https://imgs.search.brave.com/OIRecmsGTMIERIP_NB6JtGSsfZUNcX-H0qDEt-fyhUU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z3N0YXRpYy5jb20v/YWl0ZXN0a2l0Y2hl/bi93ZWJzaXRlL2Nv/bnRlbnQvaW1hZ2Ut/ZngtcGxlYXNlLXNp/Z24taW4ud2VicA"
-      border="2"
-      height="100" />
+    <div class="container">
+      <header>
+        <h1>Dokumentasi Mata Pelajaran</h1>
+        <p>Daftar mata pelajaran berdasarkan tingkat pendidikan</p>
+      </header>
+
+      <section class="section">
+        <h2>Daftar Mata Pelajaran</h2>
+
+        <div class="level-item">
+          <div class="level-title">
+            <span class="icon">📚</span>
+            <span>Sekolah Dasar (SD)</span>
+          </div>
+          <div class="level-content">
+            <ul>
+              <li>
+                <div class="subject">Bahasa Inggris</div>
+              </li>
+              <li>
+                <div class="subject">Bahasa Arab</div>
+              </li>
+              <li>
+                <div class="subject">Matematika</div>
+              </li>
+              <li>
+                <div class="subject">Bahasa Indonesia</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="level-item">
+          <div class="level-title">
+            <span class="icon">🎓</span>
+            <span>Sekolah Menengah Pertama (SMP)</span>
+          </div>
+          <div class="level-content">
+            <ul>
+              <li>
+                <div class="subject">PJOK</div>
+              </li>
+              <li>
+                <div class="subject">Bahasa Korea</div>
+              </li>
+              <li>
+                <div class="subject">Tahfidz</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>Galeri Ilustrasi</h2>
+
+        <div class="img-showcase">
+          <div class="img-card">
+            <h3>Gambar Standar</h3>
+            <div class="img-container">
+              <img
+                src="https://imgs.search.brave.com/_9hLvo6m3vSqDruUH84MX4XLHj03tgfYt_BPj6nud6A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jbG9zZS11cC1t/aWxreS13YXktZ2Fs/YXh5LXdpdGgtc3Rh/cnMtc3BhY2UtZHVz/dC11bml2ZXJzZV8z/MzkwMC00MS5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQw"
+                alt="Ilustrasi Mata Pelajaran" />
+            </div>
+          </div>
+
+          <div class="img-card">
+            <h3>Gambar dengan Jarak</h3>
+            <div class="img-container">
+              <img
+                src="https://imgs.search.brave.com/_9hLvo6m3vSqDruUH84MX4XLHj03tgfYt_BPj6nud6A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jbG9zZS11cC1t/aWxreS13YXktZ2Fs/YXh5LXdpdGgtc3Rh/cnMtc3BhY2UtZHVz/dC11bml2ZXJzZV8z/MzkwMC00MS5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQw"
+                class="spaced-img"
+                alt="Ilustrasi dengan Jarak" />
+            </div>
+          </div>
+
+          <div class="img-card">
+            <h3>Gambar dengan Border</h3>
+            <div class="img-container">
+              <img
+                src="https://imgs.search.brave.com/_9hLvo6m3vSqDruUH84MX4XLHj03tgfYt_BPj6nud6A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jbG9zZS11cC1t/aWxreS13YXktZ2Fs/YXh5LXdpdGgtc3Rh/cnMtc3BhY2UtZHVz/dC11bml2ZXJzZV8z/MzkwMC00MS5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQw"
+                class="bordered-img"
+                alt="Ilustrasi dengan Border" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2025 Dokumentasi Mata Pelajaran. Dibuat dengan ❤️</p>
+      </footer>
+    </div>
   </body>
 </html>

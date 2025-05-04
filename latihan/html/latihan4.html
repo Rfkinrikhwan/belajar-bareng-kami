@@ -1,107 +1,613 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan Form</title>
+    <title>Form Pendaftaran Modern</title>
+    <style>
+      :root {
+        --primary: #4f46e5;
+        --primary-hover: #4338ca;
+        --primary-light: #e0e7ff;
+        --secondary: #64748b;
+        --danger: #ef4444;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --dark: #1e293b;
+        --light: #f8fafc;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-300: #cbd5e1;
+        --gray-400: #94a3b8;
+        --gray-500: #64748b;
+        --white: #ffffff;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        padding: 2rem 1rem;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      h1,
+      h2 {
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+
+      h1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--primary),
+          var(--primary-light)
+        );
+        border-radius: 2px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: var(--secondary);
+        margin-top: 2rem;
+      }
+
+      p.subtitle {
+        color: var(--gray-500);
+        margin-bottom: 1.5rem;
+      }
+
+      .card {
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: var(--transition);
+      }
+
+      .card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      form {
+        width: 100%;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .form-label {
+        font-weight: 600;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+        display: block;
+        width: 100%;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--gray-300);
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px var(--primary-light);
+      }
+
+      .form-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+        background-position: right 0.5rem center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+        padding-right: 2.5rem;
+      }
+
+      .form-textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      .checkbox-group,
+      .radio-group {
+        margin-top: 0.5rem;
+      }
+
+      .checkbox-item,
+      .radio-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .checkbox-item input,
+      .radio-item input {
+        margin-right: 0.5rem;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .checkbox-item label,
+      .radio-item label {
+        cursor: pointer;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-hover);
+      }
+
+      .btn-secondary {
+        background-color: var(--gray-200);
+        color: var(--secondary);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--gray-300);
+      }
+
+      .salmon-theme {
+        background: linear-gradient(to right bottom, #fa8072, #ff6347);
+        color: white;
+      }
+
+      .salmon-theme .form-label {
+        color: white;
+      }
+
+      .salmon-theme h2 {
+        color: white;
+      }
+
+      .form-divider {
+        height: 1px;
+        background-color: var(--gray-200);
+        margin: 2rem 0;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 2rem;
+        color: var(--gray-500);
+        font-size: 0.875rem;
+      }
+
+      /* Custom checkbox and radio styling */
+      .custom-control {
+        position: relative;
+        padding-left: 1.75rem;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .custom-control input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 18px;
+        width: 18px;
+        background-color: var(--white);
+        border: 1px solid var(--gray-300);
+        border-radius: 3px;
+      }
+
+      .radio-mark {
+        border-radius: 50%;
+      }
+
+      .custom-control:hover input ~ .checkmark {
+        background-color: var(--gray-100);
+      }
+
+      .custom-control input:checked ~ .checkmark {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-control input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-control .checkmark:after {
+        left: 6px;
+        top: 2px;
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .custom-control .radio-mark:after {
+        top: 5px;
+        left: 5px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: white;
+      }
+
+      /* Responsive */
+      @media (min-width: 768px) {
+        .form-row {
+          margin-bottom: 0;
+        }
+
+        .form-label {
+          width: 30%;
+          margin-bottom: 0;
+          padding-right: 1rem;
+        }
+
+        .form-control {
+          width: 70%;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .card {
+          padding: 1.5rem;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1 align="center">Latihan Form</h1>
-    <form action="" method="">
-      <table border="1" align="center">
-        <tr>
-          <td>Nama</td>
-          <td>:</td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>:</td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Telp</td>
-          <td>:</td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td>Jenis Kelamin</td>
-          <td>:</td>
-          <td>
-            <select name="" id="">
-              <option value="">Laki-laki</option>
-              <option value="">Perempuan</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Hobby</td>
-          <td>:</td>
-          <td>
-            <input type="checkbox" name="hobby" value="Olahraga" /> Olahraga
-            <input type="checkbox" name="hobby" value="Membaca" /> Membaca
-            <input type="checkbox" name="hobby" value="Menulis" /> Menulis
-          </td>
-        </tr>
-        <tr>
-          <td>Alamat</td>
-          <td>:</td>
-          <td>
-            <textarea name="" id="" cols="30"></textarea>
-          </td>
-        </tr>
-      </table>
-    </form>
+    <div class="container">
+      <header>
+        <h1>Form Pendaftaran</h1>
+        <p class="subtitle">
+          Silakan isi data diri Anda dengan lengkap dan benar
+        </p>
+      </header>
 
-    <h2 align="center">Form Pendaftaran</h2>
-    <table align="center" border="1" bgcolor="salmon">
-      <form method="post" action="proses.php">
-        <tr>
-          <td>Nama</td>
-          <td width="200"><input type="text" name="nama" size="10" /></td>
-        </tr>
-        <tr>
-          <td>Jenis Kelamin</td>
-          <td>
-            <select name="jk" size="1">
-              <option value="Laki-laki">Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Agama</td>
-          <td>
-            <input type="radio" name="agama" value="Islam" />Islam
-            <br />
-            <input type="radio" name="agama" value="Katholik" />Katholik
-            <br />
-            <input type="radio" name="agama" value="Protestan" />Protestan
-            <br />
-            <input type="radio" name="agama" value="Hindu" />Hindu
-            <br />
-            <input type="radio" name="agama" value="Budha" />Budha
-          </td>
-        </tr>
-        <tr>
-          <td>Hobby</td>
-          <td>
-            <input type="checkbox" name="hobby[]" value="Browsing" />Browsing
-            <br />
-            <input type="checkbox" name="hobby[]" value="Game" />Game
-            <br />
-            <input type="checkbox" name="hobby[]" value="Olah Raga" />Olah Raga
-          </td>
-        </tr>
-        <tr>
-          <td>Alamat</td>
-          <td><textarea name="alamat" cols="30" rows="5"></textarea></td>
-        </tr>
-        <tr>
-          <td><input type="submit" value="Kirim" /></td>
-          <td><input type="reset" value="Batal" /></td>
-        </tr>
-      </form>
-    </table>
+      <div class="card">
+        <h2>Data Pribadi</h2>
+        <form action="#" method="post">
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="nama">Nama</label>
+              <div class="form-control">
+                <input
+                  type="text"
+                  id="nama"
+                  name="nama"
+                  class="form-input"
+                  placeholder="Masukkan nama lengkap"
+                  required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="email">Email</label>
+              <div class="form-control">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="contoh@email.com"
+                  required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="telp">Telepon</label>
+              <div class="form-control">
+                <input
+                  type="tel"
+                  id="telp"
+                  name="telp"
+                  class="form-input"
+                  placeholder="08xxxxxxxxxx"
+                  required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="jenis_kelamin"
+                >Jenis Kelamin</label
+              >
+              <div class="form-control">
+                <select
+                  id="jenis_kelamin"
+                  name="jenis_kelamin"
+                  class="form-select"
+                  required>
+                  <option value="" disabled selected>
+                    Pilih jenis kelamin
+                  </option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label">Hobby</label>
+              <div class="form-control">
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <label class="custom-control">
+                      Olahraga
+                      <input type="checkbox" name="hobby[]" value="Olahraga" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="checkbox-item">
+                    <label class="custom-control">
+                      Membaca
+                      <input type="checkbox" name="hobby[]" value="Membaca" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="checkbox-item">
+                    <label class="custom-control">
+                      Menulis
+                      <input type="checkbox" name="hobby[]" value="Menulis" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="alamat">Alamat</label>
+              <div class="form-control">
+                <textarea
+                  id="alamat"
+                  name="alamat"
+                  class="form-textarea"
+                  placeholder="Masukkan alamat lengkap"
+                  required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Kirim</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card salmon-theme">
+        <h2>Form Pendaftaran Lanjutan</h2>
+        <form action="proses.php" method="post">
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="nama2">Nama</label>
+              <div class="form-control">
+                <input
+                  type="text"
+                  id="nama2"
+                  name="nama"
+                  class="form-input"
+                  required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="jk">Jenis Kelamin</label>
+              <div class="form-control">
+                <select id="jk" name="jk" class="form-select" required>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label">Agama</label>
+              <div class="form-control">
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <label class="custom-control">
+                      Islam
+                      <input type="radio" name="agama" value="Islam" />
+                      <span class="checkmark radio-mark"></span>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <label class="custom-control">
+                      Katholik
+                      <input type="radio" name="agama" value="Katholik" />
+                      <span class="checkmark radio-mark"></span>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <label class="custom-control">
+                      Protestan
+                      <input type="radio" name="agama" value="Protestan" />
+                      <span class="checkmark radio-mark"></span>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <label class="custom-control">
+                      Hindu
+                      <input type="radio" name="agama" value="Hindu" />
+                      <span class="checkmark radio-mark"></span>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <label class="custom-control">
+                      Budha
+                      <input type="radio" name="agama" value="Budha" />
+                      <span class="checkmark radio-mark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label">Hobby</label>
+              <div class="form-control">
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <label class="custom-control">
+                      Browsing
+                      <input type="checkbox" name="hobby[]" value="Browsing" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="checkbox-item">
+                    <label class="custom-control">
+                      Game
+                      <input type="checkbox" name="hobby[]" value="Game" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="checkbox-item">
+                    <label class="custom-control">
+                      Olah Raga
+                      <input type="checkbox" name="hobby[]" value="Olah Raga" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row">
+              <label class="form-label" for="alamat2">Alamat</label>
+              <div class="form-control">
+                <textarea
+                  id="alamat2"
+                  name="alamat"
+                  class="form-textarea"
+                  rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Kirim</button>
+            <button type="reset" class="btn btn-secondary">Batal</button>
+          </div>
+        </form>
+      </div>
+
+      <footer>
+        <p>&copy; 2025 Form Pendaftaran. Semua hak dilindungi.</p>
+      </footer>
+    </div>
   </body>
 </html>

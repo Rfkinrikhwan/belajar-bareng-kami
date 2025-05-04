@@ -2,36 +2,126 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Praktik CSS - Background</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktik CSS - Background Properties</title>
     <style>
+      :root {
+        --primary-color: #4a6fa5;
+        --secondary-color: #f8f9fa;
+        --accent-color: #6e9eff;
+        --border-color: #e0e0e0;
+        --text-color: #333;
+        --heading-color: #2c3e50;
+        --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
-        font-family: sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f5f7fa;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      h1,
+      h2 {
+        color: var(--heading-color);
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .section-description {
+        margin-bottom: 1.5rem;
+        color: #555;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 30px;
+        margin-bottom: 2rem;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
       }
 
       th,
       td {
-        border: 1px solid black;
-        padding: 10px;
+        border: 1px solid var(--border-color);
+        padding: 1rem;
         text-align: left;
-        vertical-align: top;
+        vertical-align: middle;
       }
 
       th {
-        background-color: #f0f0f0;
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 500;
+      }
+
+      tr:nth-child(even) {
+        background-color: var(--secondary-color);
+      }
+
+      tr:hover {
+        background-color: rgba(110, 158, 255, 0.1);
+      }
+
+      .property-name {
+        font-family: "Courier New", monospace;
+        color: #d63384;
+        font-weight: bold;
+      }
+
+      .property-value {
+        font-family: "Courier New", monospace;
+        background-color: #f8f9fa;
+        padding: 2px 5px;
+        border-radius: 3px;
+        color: #0d6efd;
       }
 
       .preview-box {
-        width: 200px;
-        height: 100px;
+        width: 250px;
+        height: 120px;
         background-image: url("https://images2.alphacoders.com/947/thumb-1920-947089.jpg");
-        border: 1px solid #ccc;
-        margin: 5px 0;
+        border: 1px solid var(--border-color);
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .preview-box:hover {
+        transform: scale(1.02);
       }
 
       .repeat {
@@ -74,82 +164,137 @@
       .bottom-right {
         background-position: bottom right;
       }
+
+      .property-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        background-color: var(--secondary-color);
+        padding: 0.5rem 1rem;
+        border-left: 4px solid var(--accent-color);
+        border-radius: 3px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+
+        .preview-box {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Praktik CSS - Background Properties</h1>
+    <div class="container">
+      <h1>Praktik CSS - Background Properties</h1>
 
-    <h2>1. Background Repeat</h2>
-    <table>
-      <tr>
-        <th>Property</th>
-        <th>Value</th>
-        <th>Output</th>
-      </tr>
-      <tr>
-        <td>background-repeat</td>
-        <td>repeat</td>
-        <td><div class="preview-box repeat"></div></td>
-      </tr>
-      <tr>
-        <td>background-repeat</td>
-        <td>repeat-x</td>
-        <td><div class="preview-box repeat-x"></div></td>
-      </tr>
-      <tr>
-        <td>background-repeat</td>
-        <td>repeat-y</td>
-        <td><div class="preview-box repeat-y"></div></td>
-      </tr>
-      <tr>
-        <td>background-repeat</td>
-        <td>no-repeat</td>
-        <td><div class="preview-box no-repeat"></div></td>
-      </tr>
-    </table>
+      <div class="section">
+        <div class="property-header">
+          <h2>1. Background Repeat</h2>
+        </div>
+        <p class="section-description">
+          Property
+          <span class="property-name">background-repeat</span> mengontrol
+          bagaimana gambar latar belakang diulang pada elemen.
+        </p>
+        <table>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+            <th>Output</th>
+          </tr>
+          <tr>
+            <td><span class="property-name">background-repeat</span></td>
+            <td><span class="property-value">repeat</span></td>
+            <td><div class="preview-box repeat"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-name">background-repeat</span></td>
+            <td><span class="property-value">repeat-x</span></td>
+            <td><div class="preview-box repeat-x"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-name">background-repeat</span></td>
+            <td><span class="property-value">repeat-y</span></td>
+            <td><div class="preview-box repeat-y"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-name">background-repeat</span></td>
+            <td><span class="property-value">no-repeat</span></td>
+            <td><div class="preview-box no-repeat"></div></td>
+          </tr>
+        </table>
+      </div>
 
-    <h2>2. Background Position</h2>
-    <table>
-      <tr>
-        <th>Position</th>
-        <th>Output</th>
-      </tr>
-      <tr>
-        <td>top left</td>
-        <td><div class="preview-box no-repeat top-left"></div></td>
-      </tr>
-      <tr>
-        <td>top center</td>
-        <td><div class="preview-box no-repeat top-center"></div></td>
-      </tr>
-      <tr>
-        <td>top right</td>
-        <td><div class="preview-box no-repeat top-right"></div></td>
-      </tr>
-      <tr>
-        <td>center left</td>
-        <td><div class="preview-box no-repeat center-left"></div></td>
-      </tr>
-      <tr>
-        <td>center center</td>
-        <td><div class="preview-box no-repeat center-center"></div></td>
-      </tr>
-      <tr>
-        <td>center right</td>
-        <td><div class="preview-box no-repeat center-right"></div></td>
-      </tr>
-      <tr>
-        <td>bottom left</td>
-        <td><div class="preview-box no-repeat bottom-left"></div></td>
-      </tr>
-      <tr>
-        <td>bottom center</td>
-        <td><div class="preview-box no-repeat bottom-center"></div></td>
-      </tr>
-      <tr>
-        <td>bottom right</td>
-        <td><div class="preview-box no-repeat bottom-right"></div></td>
-      </tr>
-    </table>
+      <div class="section">
+        <div class="property-header">
+          <h2>2. Background Position</h2>
+        </div>
+        <p class="section-description">
+          Property
+          <span class="property-name">background-position</span> mengontrol
+          posisi gambar latar belakang dalam elemen.
+        </p>
+        <table>
+          <tr>
+            <th>Position</th>
+            <th>Output</th>
+          </tr>
+          <tr>
+            <td><span class="property-value">top left</span></td>
+            <td><div class="preview-box no-repeat top-left"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">top center</span></td>
+            <td><div class="preview-box no-repeat top-center"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">top right</span></td>
+            <td><div class="preview-box no-repeat top-right"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">center left</span></td>
+            <td><div class="preview-box no-repeat center-left"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">center center</span></td>
+            <td><div class="preview-box no-repeat center-center"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">center right</span></td>
+            <td><div class="preview-box no-repeat center-right"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">bottom left</span></td>
+            <td><div class="preview-box no-repeat bottom-left"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">bottom center</span></td>
+            <td><div class="preview-box no-repeat bottom-center"></div></td>
+          </tr>
+          <tr>
+            <td><span class="property-value">bottom right</span></td>
+            <td><div class="preview-box no-repeat bottom-right"></div></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <footer>Dokumentasi CSS Background Properties &copy; 2025</footer>
   </body>
 </html>

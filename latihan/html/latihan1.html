@@ -1,48 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TI-C</title>
+    <title>Dokumentasi TI-C</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+        line-height: 1.8;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #1e1e2f;
+        margin-top: 30px;
+      }
+
+      hr {
+        margin: 30px 0;
+        border: none;
+        border-top: 2px dashed #ccc;
+      }
+
+      .custom {
+        font-family: "Courier New", monospace;
+        background-color: #f0f0f0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+
+      .strikethrough {
+        text-decoration: line-through;
+        color: #999;
+      }
+
+      .highlight {
+        font-size: 1.2em;
+        color: blue;
+      }
+
+      .red-text {
+        color: red;
+      }
+
+      .small-text {
+        font-size: 0.8em;
+      }
+
+      .big-text {
+        font-size: 1.5em;
+      }
+
+      .note {
+        background-color: #eef9ff;
+        border-left: 4px solid #2196f3;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 6px;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <h1>Heading Satu</h1>
-    <h2>Heading Satu</h2>
-    <h3>Heading Satu</h3>
-    <h4>Heading Satu</h4>
-    <h5>Heading satu</h5>
-    <h6>Heading Satu</h6>
+    <div class="container">
+      <h1>Heading Satu</h1>
+      <h2>Heading Dua</h2>
+      <h3>Heading Tiga</h3>
+      <h4>Heading Empat</h4>
+      <h5>Heading Lima</h5>
+      <h6>Heading Enam</h6>
 
-    <p>;
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cum
-      impedit eaque enim tempore maxime laudantium ad nihil repudiandae harum
-      quos ipsum, itaque consequatur dolorem eos! Aliquam id fugit vel repellat
-      facilis quasi numquam, quaerat, veniam odit alias quas facere soluta?
-      Laboriosam voluptatum
-      <br />
-      <br />
-      <br />
-      <hr>sunt exercitationem earum voluptatem ducimus. Assumenda, cupiditate
-      sequi voluptatum a perferendis officia, aperiam odio nobis aliquam dolorem
-      unde sint. Numquam expedita explicabo illo quasi libero odio dolores nam
-      porro. Labore cupiditate rerum qui harum! Impedit a sint est facere quidem
-      libero provident sunt, labore, enim illum repellat quo reprehenderit
-      dolores harum? Consequuntur velit accusantium placeat veritatis corporis! <br>  
-     <strike>sayaa</strike> <br>
-      <tt>sayaa</tt>
-      <br>
-      <big>sayaa</big>
-      <br>
-      <small>sayaa</small>
-      <br>
-      a<sub>b</sub> 
-      <br>
-      4<sup>2</sup>
-     <br>
-     <font size="+1" font face="arial" color="blue">Hai saya Faiz dan kawan saya rifki sama taris satu lagi</font> 
-     <br>
-     <font color="red">warna huruf merah</font> <br />
-        
-    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+        Corporis, cum impedit eaque enim tempore maxime laudantium ad nihil
+        repudiandae harum quos ipsum. <br />
+        Itaque consequatur dolorem eos! Aliquam id fugit vel repellat facilis
+        quasi numquam.
+      </p>
+
+      <hr />
+
+      <div class="note">
+        Sunt exercitationem earum voluptatem ducimus. Assumenda, cupiditate
+        sequi voluptatum a perferendis officia, aperiam odio nobis aliquam
+        dolorem unde sint. Numquam expedita explicabo illo quasi libero odio
+        dolores nam porro.
+      </div>
+
+      <p>
+        Labore cupiditate rerum qui harum! Impedit a sint est facere quidem
+        libero provident sunt, labore, enim illum repellat quo reprehenderit
+        dolores harum? Consequuntur velit accusantium placeat veritatis
+        corporis!
+      </p>
+
+      <ul>
+        <li><span class="strikethrough">Saya</span></li>
+        <li><span class="custom">sayaa</span></li>
+        <li><span class="big-text">sayaa (besar)</span></li>
+        <li><span class="small-text">sayaa (kecil)</span></li>
+        <li>a<sub>b</sub> (subscript)</li>
+        <li>4<sup>2</sup> (superscript)</li>
+      </ul>
+
+      <p>
+        <span class="highlight"
+          >Hai saya Faiz dan kawan saya Rifki serta Taris</span
+        ><br />
+        <span class="red-text">Teks berwarna merah</span>
+      </p>
+    </div>
   </body>
 </html>

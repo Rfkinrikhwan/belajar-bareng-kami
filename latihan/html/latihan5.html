@@ -1,349 +1,745 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Formulir Pendaftaran Mahasiswa Baru</title>
-  </head>
-  <body>
-    <h2 align="center">FORMULIR PENDAFTARAN MAHASISWA BARU</h2>
-    <p align="center">Tahun Akademik: 20XX/20XX</p>
-    <p align="center">STMIK KAPUTAMA</p>
-    <p align="center">
-      Jl. Veteran No.4A, Kota Binjai, Telp. +62 853 1170 5402
-    </p>
-    <p align="center">
-      Website:
-      <a href="https://pmb.kaputama.ac.id/landing/">Kaputama Ac Id</a> | Email:
-      info@kaputama.ac.id
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Mahasiswa Baru STMIK Kaputama</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-light: #e0e7ff;
+      --secondary: #64748b;
+      --danger: #ef4444;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --white: #ffffff;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --transition: all 0.3s ease;
+    }
 
-    <table
-      width="100%"
-      align="center"
-      style="display: flex; justify-content: center">
-      <tr>
-        <td>
-          <form action="#" method="post">
-            <h3>A. DATA PRIBADI</h3>
-            <table border="1" cellspacing="0" cellpadding="5" width="100%">
-              <tr>
-                <td>1. Nama Lengkap</td>
-                <td>
-                  <input
-                    type="text"
-                    name="nama_lengkap"
-                    style="width: 95%"
-                    placeholder="Masukkan nama lengkap" />
-                </td>
-              </tr>
-              <tr>
-                <td>2. Tempat/Tanggal Lahir</td>
-                <td>
-                  <input
-                    type="text"
-                    name="ttl"
-                    style="width: 95%"
-                    placeholder="Masukkan tempat/tanggal lahir" />
-                </td>
-              </tr>
-              <tr>
-                <td>3. Jenis Kelamin</td>
-                <td>
-                  <label
-                    ><input type="radio" name="jk" value="Laki-laki" />
-                    Laki-laki</label
-                  >
-                  <label
-                    ><input type="radio" name="jk" value="Perempuan" />
-                    Perempuan</label
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>4. Agama</td>
-                <td>
-                  <label
-                    ><input type="radio" name="agama" value="Islam" />
-                    Islam</label
-                  >
-                  <label
-                    ><input type="radio" name="agama" value="Kristen" />
-                    Kristen</label
-                  >
-                  <label
-                    ><input type="radio" name="agama" value="Katolik" />
-                    Katolik</label
-                  >
-                  <label
-                    ><input type="radio" name="agama" value="Hindu" />
-                    Hindu</label
-                  >
-                  <label
-                    ><input type="radio" name="agama" value="Buddha" />
-                    Buddha</label
-                  >
-                  <label
-                    ><input type="radio" name="agama" value="Lainnya" />
-                    Lainnya</label
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>5. Alamat Lengkap</td>
-                <td>
-                  <textarea
-                    name="alamat"
-                    rows="2"
-                    style="width: 95%"
-                    placeholder="Masukkan alamat lengkap"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <td>6. No. HP / WhatsApp</td>
-                <td>
-                  <input
-                    type="text"
-                    name="no_hp"
-                    style="width: 95%"
-                    placeholder="Masukkan nomor HP/WhatsApp" />
-                </td>
-              </tr>
-              <tr>
-                <td>7. Email Aktif</td>
-                <td>
-                  <input
-                    type="email"
-                    name="email"
-                    style="width: 95%"
-                    placeholder="Masukkan email aktif" />
-                </td>
-              </tr>
-              <tr>
-                <td>8. Golongan Darah</td>
-                <td>
-                  <label
-                    ><input type="radio" name="gol_darah" value="A" /> A</label
-                  >
-                  <label
-                    ><input type="radio" name="gol_darah" value="B" /> B</label
-                  >
-                  <label
-                    ><input type="radio" name="gol_darah" value="AB" />
-                    AB</label
-                  >
-                  <label
-                    ><input type="radio" name="gol_darah" value="O" /> O</label
-                  >
-                  <label
-                    ><input type="radio" name="gol_darah" value="Tidak Tahu" />
-                    Tidak Tahu</label
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>9. Status Perkawinan</td>
-                <td>
-                  <label
-                    ><input type="radio" name="status" value="Belum Kawin" />
-                    Belum Kawin</label
-                  >
-                  <label
-                    ><input type="radio" name="status" value="Kawin" />
-                    Kawin</label
-                  >
-                  <label
-                    ><input type="radio" name="status" value="Cerai" />
-                    Cerai</label
-                  >
-                </td>
-              </tr>
-            </table>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-            <h3>B. DATA PENDIDIKAN</h3>
-            <table border="1" cellspacing="0" cellpadding="5" width="100%">
-              <tr>
-                <td>1. Asal Sekolah</td>
-                <td>
-                  <input
-                    type="text"
-                    name="asal_sekolah"
-                    style="width: 95%"
-                    placeholder="Masukkan asal sekolah" />
-                </td>
-              </tr>
-              <tr>
-                <td>2. Jurusan/Program Studi</td>
-                <td>
-                  <input
-                    type="text"
-                    name="jurusan"
-                    style="width: 95%"
-                    placeholder="Masukkan jurusan/program studi" />
-                </td>
-              </tr>
-              <tr>
-                <td>3. Tahun Lulus</td>
-                <td>
-                  <input
-                    type="text"
-                    name="tahun_lulus"
-                    style="width: 95%"
-                    placeholder="Masukkan tahun lulus" />
-                </td>
-              </tr>
-              <tr>
-                <td>4. Nomor Ijazah</td>
-                <td>
-                  <input
-                    type="text"
-                    name="no_ijazah"
-                    style="width: 95%"
-                    placeholder="Masukkan nomor ijazah" />
-                </td>
-              </tr>
-              <tr>
-                <td>5. Nilai Rata-Rata</td>
-                <td>
-                  <input
-                    type="text"
-                    name="nilai"
-                    style="width: 95%"
-                    placeholder="Masukkan nilai rata-rata" />
-                </td>
-              </tr>
-            </table>
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
 
-            <h3>C. PILIHAN PROGRAM STUDI</h3>
-            <p>
-              <label
-                ><input type="radio" name="prodi" value="Sistem Informasi" />
-                Sistem Informasi</label
-              >
-              <label
-                ><input type="radio" name="prodi" value="Teknik Informatika" />
-                Teknik Informatika</label
-              >
-              <label
-                ><input type="radio" name="prodi" value="Bisnis Digital" />
-                Bisnis Digital</label
-              >
-              <label><input type="radio" name="prodi" value="MI" /> MI</label>
-              <label><input type="radio" name="prodi" value="KA" /> KA</label>
-            </p>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+    }
 
-            <h3>D. DATA ORANG TUA/WALI</h3>
-            <table border="1" cellspacing="0" cellpadding="5" width="100%">
-              <tr>
-                <td>1. Nama Ayah</td>
-                <td>
-                  <input
-                    type="text"
-                    name="ayah"
-                    style="width: 95%"
-                    placeholder="Masukkan nama ayah" />
-                </td>
-              </tr>
-              <tr>
-                <td>2. Nama Ibu</td>
-                <td>
-                  <input
-                    type="text"
-                    name="ibu"
-                    style="width: 95%"
-                    placeholder="Masukkan nama ibu" />
-                </td>
-              </tr>
-              <tr>
-                <td>3. Pekerjaan Ayah/Ibu</td>
-                <td>
-                  <input
-                    type="text"
-                    name="pekerjaan_ortu"
-                    style="width: 95%"
-                    placeholder="Masukkan pekerjaan ayah/ibu" />
-                </td>
-              </tr>
-              <tr>
-                <td>4. Alamat Orang Tua/Wali</td>
-                <td>
-                  <textarea
-                    name="alamat_ortu"
-                    rows="2"
-                    style="width: 95%"
-                    placeholder="Masukkan alamat orang tua/wali"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <td>5. No. HP Orang Tua/Wali</td>
-                <td>
-                  <input
-                    type="text"
-                    name="hp_ortu"
-                    style="width: 95%"
-                    placeholder="Masukkan nomor HP orang tua/wali" />
-                </td>
-              </tr>
-            </table>
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1.5rem;
+    }
 
-            <h3>E. LAMPIRAN BERKAS</h3>
-            <p>
-              <label
-                ><input type="checkbox" name="lampiran" value="Ijazah" />
-                Fotokopi Ijazah Terakhir (dilegalisir)</label
-              ><br />
-              <label
-                ><input type="checkbox" name="lampiran" value="SKHUN" />
-                Fotokopi SKHUN (dilegalisir)</label
-              ><br />
-              <label
-                ><input type="checkbox" name="lampiran" value="KTP_KK" />
-                Fotokopi KTP & KK</label
-              ><br />
-              <label
-                ><input type="checkbox" name="lampiran" value="Foto" /> Pas Foto
-                3x4 (3 lembar)</label
-              ><br />
-              <label
-                ><input type="checkbox" name="lampiran" value="SKL" /> Surat
-                Keterangan Lulus</label
-              ><br />
-              <label
-                ><input type="checkbox" name="lampiran" value="Lainnya" />
-                Lainnya</label
-              >
-            </p>
+    .header h1 {
+      color: var(--dark);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
 
-            <h3>F. PERNYATAAN</h3>
-            <p>
-              Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang
-              saya isikan dalam formulir ini adalah benar dan dapat
-              dipertanggungjawabkan.
-            </p>
-            <p>
-              Tempat, Tanggal:
-              <input
-                type="text"
-                name="tempat_tanggal"
-                placeholder="Masukkan tempat, tanggal" />
-            </p>
-            <p>
-              Tanda Tangan Pendaftar:<br /><br /><br /><br />
-              (
-              <input
-                type="text"
-                name="ttd"
-                style="width: 25%"
-                placeholder="Masukkan nama" />
-              )
-            </p>
+    .header h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      border-radius: 2px;
+    }
 
-            <p align="center">
-              <button type="submit">Kirim</button>
-              <button type="reset">Reset</button>
-            </p>
-          </form>
-        </td>
-      </tr>
-    </table>
-  </body>
+    .header p {
+      color: var(--gray-500);
+      margin: 5px 0;
+    }
+
+    .header .contact-info {
+      margin-top: 15px;
+    }
+
+    .header a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .header a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      max-width: 120px;
+      margin-bottom: 15px;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      color: var(--secondary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .form-group:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .form-row:last-child {
+      border-bottom: none;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+
+    .form-input {
+      width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .radio-group, .checkbox-group {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .checkbox-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .custom-control {
+      position: relative;
+      padding-left: 1.75rem;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .custom-control input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: 3px;
+    }
+
+    .radio-mark {
+      border-radius: 50%;
+    }
+
+    .custom-control:hover input ~ .checkmark {
+      background-color: var(--gray-100);
+    }
+
+    .custom-control input:checked ~ .checkmark {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .custom-control input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    .custom-control .checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .custom-control .radio-mark:after {
+      top: 5px;
+      left: 5px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .program-studi {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .program-studi label {
+      padding: 0.5rem 1rem;
+      background-color: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .program-studi label:hover {
+      background-color: var(--gray-100);
+    }
+
+    .program-studi input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .program-studi input[type="radio"]:checked + span {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .program-studi input[type="radio"]:checked + span::before {
+      content: "✓ ";
+    }
+
+    .pernyataan {
+      background-color: var(--gray-100);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--warning);
+    }
+
+    .pernyataan p {
+      margin-bottom: 1rem;
+    }
+
+    .signature-area {
+      margin-top: 1.5rem;
+    }
+
+    .signature-line {
+      border-bottom: 1px dashed var(--gray-300);
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+
+    .actions {
+      display: flex;
+      /* justify-content: center; */
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    button[type="submit"] {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--primary-hover);
+    }
+
+    button[type="reset"] {
+      background-color: var(--gray-200);
+      color: var(--secondary);
+    }
+
+    button[type="reset"]:hover {
+      background-color: var(--gray-300);
+    }
+
+    /* Responsive styles */
+    @media (min-width: 768px) {
+      .form-row {
+        margin-bottom: 0;
+      }
+      
+      .form-label {
+        width: 30%;
+        margin-bottom: 0;
+        padding-right: 1rem;
+      }
+      
+      .form-input {
+        width: 70%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .form-row {
+        flex-direction: column;
+      }
+      
+      .form-label {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      
+      .program-studi {
+        flex-direction: column;
+      }
+      
+      .actions {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <!-- <img src="https://pmb.kaputama.ac.id/landing/wp-content/uploads/2023/12/Proyek-Baru-2-1024x191.png" alt="Logo STMIK KAPUTAMA" class="logo" /> -->
+      <h1>FORMULIR PENDAFTARAN MAHASISWA BARU</h1>
+      <p>Tahun Akademik: 20XX/20XX</p>
+      <p><strong>STMIK KAPUTAMA</strong></p>
+      <div class="contact-info">
+        <p>Jl. Veteran No.4A, Kota Binjai, Telp. +62 853 1170 5402</p>
+        <p>Website: <a href="https://pmb.kaputama.ac.id/landing/" target="_blank">pmb.kaputama.ac.id</a> | Email: <a href="mailto:info@kaputama.ac.id">info@kaputama.ac.id</a></p>
+      </div>
+    </div>
+
+    <form action="#" method="post">
+      <div class="section">
+        <h2 class="section-title">A. DATA PRIBADI</h2>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="form-label">1. Nama Lengkap</div>
+            <div class="form-input">
+              <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">2. Tempat/Tanggal Lahir</div>
+            <div class="form-input">
+              <input type="text" name="ttl" placeholder="Contoh: Jakarta, 15 Agustus 2000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">3. Jenis Kelamin</div>
+            <div class="form-input">
+              <div class="radio-group">
+                <label class="custom-control">
+                  <input type="radio" name="jk" value="Laki-laki" required>
+                  <span class="checkmark radio-mark"></span>
+                  <span>Laki-laki</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="jk" value="Perempuan">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Perempuan</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">4. Agama</div>
+            <div class="form-input">
+              <div class="radio-group">
+                <label class="custom-control">
+                  <input type="radio" name="agama" value="Islam" required>
+                  <span class="checkmark radio-mark"></span>
+                  <span>Islam</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="agama" value="Kristen">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Kristen</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="agama" value="Katolik">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Katolik</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="agama" value="Hindu">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Hindu</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="agama" value="Buddha">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Buddha</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="agama" value="Lainnya">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Lainnya</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">5. Alamat Lengkap</div>
+            <div class="form-input">
+              <textarea name="alamat" rows="2" placeholder="Masukkan alamat lengkap" required></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">6. No. HP / WhatsApp</div>
+            <div class="form-input">
+              <input type="text" name="no_hp" placeholder="Contoh: 081234567890" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">7. Email Aktif</div>
+            <div class="form-input">
+              <input type="email" name="email" placeholder="Contoh: nama@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">8. Golongan Darah</div>
+            <div class="form-input">
+              <div class="radio-group">
+                <label class="custom-control">
+                  <input type="radio" name="gol_darah" value="A" required>
+                  <span class="checkmark radio-mark"></span>
+                  <span>A</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="gol_darah" value="B">
+                  <span class="checkmark radio-mark"></span>
+                  <span>B</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="gol_darah" value="AB">
+                  <span class="checkmark radio-mark"></span>
+                  <span>AB</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="gol_darah" value="O">
+                  <span class="checkmark radio-mark"></span>
+                  <span>O</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="gol_darah" value="Tidak Tahu">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Tidak Tahu</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">9. Status Perkawinan</div>
+            <div class="form-input">
+              <div class="radio-group">
+                <label class="custom-control">
+                  <input type="radio" name="status" value="Belum Kawin" required>
+                  <span class="checkmark radio-mark"></span>
+                  <span>Belum Kawin</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="status" value="Kawin">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Kawin</span>
+                </label>
+                <label class="custom-control">
+                  <input type="radio" name="status" value="Cerai">
+                  <span class="checkmark radio-mark"></span>
+                  <span>Cerai</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">B. DATA PENDIDIKAN</h2>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="form-label">1. Asal Sekolah</div>
+            <div class="form-input">
+              <input type="text" name="asal_sekolah" placeholder="Masukkan nama sekolah" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">2. Jurusan/Program Studi</div>
+            <div class="form-input">
+              <input type="text" name="jurusan" placeholder="Masukkan jurusan/program studi" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">3. Tahun Lulus</div>
+            <div class="form-input">
+              <input type="text" name="tahun_lulus" placeholder="Contoh: 2023" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">4. Nomor Ijazah</div>
+            <div class="form-input">
+              <input type="text" name="no_ijazah" placeholder="Masukkan nomor ijazah" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">5. Nilai Rata-Rata</div>
+            <div class="form-input">
+              <input type="text" name="nilai" placeholder="Contoh: 85.5" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">C. PILIHAN PROGRAM STUDI</h2>
+        <div class="program-studi">
+          <label>
+            <input type="radio" name="prodi" value="Sistem Informasi" required>
+            <span>Sistem Informasi</span>
+          </label>
+          <label>
+            <input type="radio" name="prodi" value="Teknik Informatika">
+            <span>Teknik Informatika</span>
+          </label>
+          <label>
+            <input type="radio" name="prodi" value="Bisnis Digital">
+            <span>Bisnis Digital</span>
+          </label>
+          <label>
+            <input type="radio" name="prodi" value="MI">
+            <span>Manajemen Informatika</span>
+          </label>
+          <label>
+            <input type="radio" name="prodi" value="KA">
+            <span>Komputerisasi Akuntansi</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">D. DATA ORANG TUA/WALI</h2>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="form-label">1. Nama Ayah</div>
+            <div class="form-input">
+              <input type="text" name="ayah" placeholder="Masukkan nama ayah" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">2. Nama Ibu</div>
+            <div class="form-input">
+              <input type="text" name="ibu" placeholder="Masukkan nama ibu" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">3. Pekerjaan Ayah/Ibu</div>
+            <div class="form-input">
+              <input type="text" name="pekerjaan_ortu" placeholder="Masukkan pekerjaan ayah/ibu" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">4. Alamat Orang Tua/Wali</div>
+            <div class="form-input">
+              <textarea name="alamat_ortu" rows="2" placeholder="Masukkan alamat orang tua/wali" required></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">5. No. HP Orang Tua/Wali</div>
+            <div class="form-input">
+              <input type="text" name="hp_ortu" placeholder="Masukkan nomor HP orang tua/wali" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">E. LAMPIRAN BERKAS</h2>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="form-input">
+              <div class="checkbox-group">
+                <label class="custom-control">
+                  <input type="checkbox" name="lampiran" value="Ijazah" required>
+                  <span class="checkmark"></span>
+                  <span>Fotokopi Ijazah Terakhir (dilegalisir)</span>
+                </label>
+                <label class="custom-control">
+                  <input type="checkbox" name="lampiran" value="SKHUN">
+                  <span class="checkmark"></span>
+                  <span>Fotokopi SKHUN (dilegalisir)</span>
+                </label>
+                <label class="custom-control">
+                  <input type="checkbox" name="lampiran" value="KTP_KK">
+                  <span class="checkmark"></span>
+                  <span>Fotokopi KTP & KK</span>
+                </label>
+                <label class="custom-control">
+                  <input type="checkbox" name="lampiran" value="Foto">
+                  <span class="checkmark"></span>
+                  <span>Pas Foto 3x4 (3 lembar)</span>
+                </label>
+                <label class="custom-control">
+                  <input type="checkbox" name="lampiran" value="SKL">
+                  <span class="checkmark"></span>
+                  <span>Surat Keterangan Lulus</span>
+                </label>
+                <label class="custom-control">
+                  <input type="checkbox" name="lampiran" value="Lainnya">
+                  <span class="checkmark"></span>
+                  <span>Lainnya</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">F. PERNYATAAN</h2>
+        <div class="pernyataan">
+          <p>Saya yang bertanda tangan di bawah ini menyatakan bahwa data yang saya isikan dalam formulir ini adalah benar dan dapat dipertanggungjawabkan.</p>
+          <div class="form-row">
+            <div class="form-label">Tempat, Tanggal:</div>
+            <div class="form-input">
+              <input type="text" name="tempat_tanggal" placeholder="Contoh: Binjai, 4 Mei 2025" required>
+            </div>
+          </div>
+          <div class="signature-area">
+            <p>Tanda Tangan Pendaftar:</p>
+            <div class="signature-line"></div>
+            <div>
+              ( <input type="text" name="ttd" style="width: 250px;" placeholder="Masukkan nama lengkap" required> )
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" type="submit">Kirim Formulir</button>
+        <button class="btn" type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</body>
 </html>
